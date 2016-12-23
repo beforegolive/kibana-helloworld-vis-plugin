@@ -32,6 +32,50 @@
 bin/kibana-plugin install <url>
 ```
 
+## 部分代码解读
+- 组件的本质是npm包
+- 组件入口文件是导出一个包含了kibana参数的函数
+```bash
+export default function (kibana) {
+  return new kibana.Plugin({
+    # // core code here...
+    uiExports: {
+      # // 其中visTypes是表示组件类型，另外两种的类型对应属性名是分别是app和hack
+      visTypes: [
+        # // 该路径指向组件的核心代码，plugins前缀为必填，第一个jx-minimal-plugin为组件名，后一个为对应的js文件。
+                'plugins/jx-minimal-plugin/jx-minimal-plugin'
+          ]
+    }
+  })
+}
+```
+- 组件核心类jx-minimal-plugin.js
+需要引入两个kibana核心组件，路径固定，前一个用来注册新的组件到kibana，后一个用来设置组件可视化类型
+```bash
+import TemplateVisTypeTemplateVisTypeProvider from 'ui/template_vis_type/template_vis_type';
+import VisSchemasProvider from 'ui/vis/schemas';
+```
+
+- angular页面呈现
+在核心组件jx-minimal-plugin.js指定模板文件jx-minimal-plugin.html。
+```bash
+<div ng-controller="HelloWorldController" class="hello-world-vis">
+  {{ label }}
+</div>
+```
+
+页面对应的逻辑存放在jx-minimal-plugin-controller.js中。
+```bash
+import uiModules from 'ui/modules';
+
+const module = uiModules.get('kibana/jx-minimal-plugin', ['kibana']);
+
+module.controller('HelloWorldController', function($scope, Private){
+  $scope.label = 'Hello World'
+})
+```
+
+
 ## 参考文献资料
 - [Writing Kibana 4 Plugins – Basics](https://www.timroes.de/2015/12/02/writing-kibana-4-plugins-basics/)
 - [health_metric_vis](https://github.com/DeanF/health_metric_vis)
