@@ -20,7 +20,7 @@
     hack方法，可以添加一些自定义的脚本内容，比如给body添加一些按钮事件等等。
 
 ## 开发注意事项
-比不可少的开发工具[kibana-plugin-helpers](https://github.com/spalger/kibana-plugin-helpers)
+必不可少的开发工具[kibana-plugin-helpers](https://github.com/spalger/kibana-plugin-helpers)
 。它可以让你在本地的kibana启动时自动加载该组件，方便调试。前提条件是组件目录必须和kibana目录平行。
 
 [A Yeoman Generator for Kibana Plugins](https://github.com/elastic/generator-kibana-plugin) 已内置了该组件。
