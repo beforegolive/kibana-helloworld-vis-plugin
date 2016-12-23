@@ -5,8 +5,9 @@ export default function (kibana) {
     require: ['elasticsearch'],
 
     uiExports: {
-      
-      
+      visTypes: [
+                'plugins/jx-minimal-plugin/jx-minimal-plugin'
+          ]
     },
 
     config(Joi) {
@@ -15,7 +16,7 @@ export default function (kibana) {
       }).default();
     },
 
-    
+
 
   });
 };
