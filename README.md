@@ -1,7 +1,7 @@
 # jx_minimal_plugin
+一个最基本的hello world Kibana插件，该插件创建了一个Visualize组件，名为 Hello World Metric，内容输出Hello World。
 
-> 一个最基本的hello world Kibana插件，该插件创建了一个Visualize组件，名为 Hello World Metric，内容简单展示Hello World
----
+由于是使用了[A Yeoman Generator](https://github.com/elastic/generator-kibana-plugin)组件生成模板时，用了最小化的--minimal参数，故以此命名。
 
 ## 创建Kibana插件的流程和注意事项
 
