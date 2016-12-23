@@ -1,14 +1,13 @@
 # jx_minimal_plugin
 
-> 一个最基本的hello world Kibana插件
-该插件创建了一个Visualize组件，名为 Hello World Metric，内容简单展示Hello World
+> 一个最基本的hello world Kibana插件，该插件创建了一个Visualize组件，名为 Hello World Metric，内容简单展示Hello World
 ---
 
 ## 创建Kibana插件的流程和注意事项
 
-1:使用的前端框架是angular框架
-2:需要的辅助工具是[A Yeoman Generator for Kibana Plugins](https://github.com/elastic/generator-kibana-plugin)
-3：kibana没有向前兼容机制，每个组件需要对kibana不同的版本维护各自的代码。
+- 使用的前端框架是angular框架
+- 需要的辅助工具是[A Yeoman Generator for Kibana Plugins](https://github.com/elastic/generator-kibana-plugin)
+- kibana没有向前兼容机制，每个组件需要对kibana不同的版本维护各自的代码。
 
 ## kibana插件的三种主要类型
   - app
@@ -34,7 +33,6 @@ bin/kibana-plugin install <url>
 ```
 
 ## 参考文献资料
-1：[Writing Kibana 4 Plugins – Basics](https://www.timroes.de/2015/12/02/writing-kibana-4-plugins-basics/)
-2: [health_metric_vis](https://github.com/DeanF/health_metric_vis)
-3: [elastic官网](https://www.elastic.co/guide/en/kibana/current/_installing_plugins.html)
-See the [kibana contributing guide](https://github.com/elastic/kibana/blob/master/CONTRIBUTING.md)
+- [Writing Kibana 4 Plugins – Basics](https://www.timroes.de/2015/12/02/writing-kibana-4-plugins-basics/)
+- [health_metric_vis](https://github.com/DeanF/health_metric_vis)
+- [elastic官网](https://www.elastic.co/guide/en/kibana/current/_installing_plugins.html)
